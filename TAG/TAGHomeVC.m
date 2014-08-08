@@ -24,7 +24,7 @@
 	
     _twitterAPI = [TAGTwitterController new];
     
-    [_twitterAPI fetchSearchResultsForQuery:@"Where is Everybody?"];
+    [_twitterAPI fetchSearchResultsForQuery:@"#SWSeattle"];
 }
 
 - (void)didReceiveMemoryWarning
