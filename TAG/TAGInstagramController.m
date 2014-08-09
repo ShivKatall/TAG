@@ -21,6 +21,8 @@
 
 @implementation TAGInstagramController
 
+// for more see http://instagram.com/developer/authentication/
+
 -(void)requestOAuthAccess
 {
     NSString *oAuthRequestString = [NSString stringWithFormat:INSTAGRAM_OAUTH_URL,INSTAGRAM_CLIENT_ID,INSTAGRAM_CALLBACK_URI];
