@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *user;
-@property (nonatomic, strong) NSString *body;
+@property (nonatomic, strong) NSString *caption;
 
 @end

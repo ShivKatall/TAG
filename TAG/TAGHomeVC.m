@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) TAGAppDelegate *appDelegate;
 @property (nonatomic, strong) TAGTwitterController *twitterController;
+@property (nonatomic, strong) TAGInstagramController *instagramController;
 
 @end
 
@@ -26,9 +27,24 @@
 	
     _appDelegate = [UIApplication sharedApplication].delegate;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
     // setup twitter
     _twitterController = _appDelegate.twitterController;
-    [_twitterController fetchSearchResultsForQuery:@"#KanyeWest"];
+    //    [_twitterController fetchSearchResultsForQuery:@"KanyeWest"];
+    
+    // setup instagram
+    _instagramController = _appDelegate.instagramController;
+    
+    if (_instagramController.instagramToken) {
+        [_instagramController fetchInstagramPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
+            NSLog(@"%@", instagramPosts);
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning

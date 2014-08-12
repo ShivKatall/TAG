@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [self.instagramController createTokenRequestWithURL:url];
+    [self.instagramController gainOAuthAccessWithURL:url];
     
     return YES;
 }

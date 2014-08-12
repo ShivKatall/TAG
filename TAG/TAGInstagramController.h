@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *instagramToken;
 
--(NSMutableURLRequest *)createTokenRequestWithURL:(NSURL *)url;
+-(void)gainOAuthAccessWithURL:(NSURL *)url;
+-(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock;
 
 @end
