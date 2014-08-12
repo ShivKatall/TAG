@@ -6,13 +6,15 @@
 //  Copyright (c) 2014 TAG. All rights reserved.
 //
 
+#import "TAGAppDelegate.h"
 #import "TAGHomeVC.h"
 #import "TAGTwitterController.h"
 
 
 @interface TAGHomeVC ()
 
-@property (nonatomic, strong) TAGTwitterController *twitterAPI;
+@property (nonatomic, strong) TAGAppDelegate *appDelegate;
+@property (nonatomic, strong) TAGTwitterController *twitterController;
 
 @end
 
@@ -22,9 +24,11 @@
 {
     [super viewDidLoad];
 	
-    _twitterAPI = [TAGTwitterController new];
+    _appDelegate = [UIApplication sharedApplication].delegate;
     
-    [_twitterAPI fetchSearchResultsForQuery:@"#SWSeattle"];
+    // setup twitter
+    _twitterController = _appDelegate.twitterController;
+    [_twitterController fetchSearchResultsForQuery:@"#KanyeWest"];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TAGTwitterController.h"
+#import "TAGInstagramController.h"
 
 @interface TAGAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) TAGTwitterController *twitterController;
+@property (nonatomic, strong) TAGInstagramController *instagramController;
 
 @end

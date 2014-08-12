@@ -15,13 +15,29 @@
 
 @interface TAGInstagramController ()
 
-@property (nonatomic, strong) NSURLSession *URLSession;
+@property (nonatomic, strong) NSURLSession *uRLSession;
 
 @end
 
 @implementation TAGInstagramController
 
-// for more see http://instagram.com/developer/authentication/
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        self.uRLSession = [NSURLSession sessionWithConfiguration:configuration];
+        self.instagramToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"instagramoauthtoken"];
+        
+        if (!self.instagramToken) {
+            [self performSelector:@selector(requestOAuthAccess) withObject:nil afterDelay:0.1];
+        }
+    }
+    return self;
+}
+
+#pragma mark - OAuth Methods
 
 -(void)requestOAuthAccess
 {
@@ -38,7 +54,7 @@
     return [components lastObject];
 }
 
--(NSMutableURLRequest *)createTokenRequestWithURL:(NSURL *)url;
+-(NSMutableURLRequest *)createTokenRequestWithURL:(NSURL *)url
 {
     NSString *code = [self getCodeFromCallbackURL:url];
     NSString *grantType = @"authorization_code";
@@ -58,7 +74,7 @@
 
 -(void)postTokenDataTaskWithRequest:(NSMutableURLRequest *)request
 {
-    NSURLSessionDataTask *tokenDataTask = [self.URLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionDataTask *tokenDataTask = [self.uRLSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (error) {
             NSLog(@"Error: %@", error.description);
@@ -66,7 +82,7 @@
         
         NSLog(@"%@", response.description);
         NSString *token = [self createTokenFromResponseData:data];
-        [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"oauthtoken"];
+        [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"instagramoauthtoken"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
     
@@ -84,5 +100,14 @@
     
     return tokenArray[1];
 }
+
+#pragma mark API Methods
+
+-(void)fetchSearchResultsForQuery:(NSString *)query
+{
+    
+}
+
+// for more see http://instagram.com/developer/authentication/
 
 @end

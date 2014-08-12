@@ -10,4 +10,8 @@
 
 @interface TAGInstagramController : NSObject
 
+@property (nonatomic, strong) NSString *instagramToken;
+
+-(NSMutableURLRequest *)createTokenRequestWithURL:(NSURL *)url;
+
 @end
