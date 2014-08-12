@@ -36,6 +36,8 @@
 
 -(void)fetchSearchResultsForQuery:(NSString *)query
 {
+    NSString *hashtagQuery = [self createHashtagQueryFromQuery:query];
+    
     if ([self userHasAccessToTwitter]) {
         {
             //  Step 1:  Obtain access to the user's Twitter accounts
@@ -46,7 +48,7 @@
                                                     completion:^(BOOL granted, NSError *error) {
                 if (granted) {
                     // Encode query
-                    NSString *encodedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                    NSString *encodedQuery = [hashtagQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     NSLog(@"Encoded Query: %@", encodedQuery);
                     
                     //  Create a request
@@ -97,4 +99,12 @@
     }
 }
 
+-(NSString *)createHashtagQueryFromQuery:(NSString *)query
+{
+    NSString *hashtagQuery = [NSString stringWithFormat:@"#%@", query];
+  
+    return hashtagQuery;
+}
+                               
+                               
 @end
