@@ -12,6 +12,7 @@
 #define INSTAGRAM_CLIENT_SECRET @"0bd2bc39ab09413db9b29253727f8b22"
 #define INSTAGRAM_OAUTH_URL @"https://api.instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=code"
 #define INSTAGRAM_CALLBACK_URI @"TAGiOS://auth"
+#define INSTAGRAM_API_URL @"https://api.instagram.com/v1/"
 
 @interface TAGInstagramController ()
 
@@ -103,8 +104,36 @@
 
 #pragma mark API Methods
 
--(void)fetchSearchResultsForQuery:(NSString *)query
+-(void)retrieveMediaForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *media))completionBlock
 {
+    // set parameters
+    NSURL *mediaURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@tags/%@/media/recent", INSTAGRAM_API_URL, tag]];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    // setup request
+    NSMutableURLRequest *request = [NSMutableURLRequest new];
+    [request setURL:mediaURL];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:[NSString stringWithFormat:@"token %@", self.instagramToken] forKey:@"Authorization"];
+    
+    // setup dataTask
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"error: %@", error.description);
+        }
+        NSLog(@"%@", response.description);
+        
+        NSDictionary *rawData = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:NSJSONReadingMutableContainers
+                                                                  error:nil];
+        NSMutableArray *mediaData = [NSMutableArray new];
+        
+    // needs model objects
+        
+        
+    }];
+    
     
 }
 
