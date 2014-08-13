@@ -78,6 +78,8 @@
     [tokenRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
     [tokenRequest setHTTPBody:postData];
     
+    NSLog(@"HTTPBody: %@", tokenRequest.HTTPBody);
+    
     return tokenRequest;
 }
 
@@ -115,7 +117,7 @@
 -(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
 {
     // set parameters
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@tags/%@/media/recent", INSTAGRAM_API_URL, tag]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@tags/%@/media/recent?access_token=%@", INSTAGRAM_API_URL, tag, self.instagramToken]];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
@@ -126,6 +128,8 @@
     [request setValue:[NSString stringWithFormat:@"token %@", self.instagramToken] forHTTPHeaderField:@"Authorization"];
     
     NSLog(@"Request: %@", request.HTTPBody);
+    NSLog(@"Token: %@", self.instagramToken);
+    NSLog(@"URL %@", request.URL);
     
     // setup dataTask
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
