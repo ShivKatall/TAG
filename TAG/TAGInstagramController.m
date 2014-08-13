@@ -115,17 +115,17 @@
 -(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
 {
     // set parameters
-    NSURL *mediaURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@tags/%@/media/recent", INSTAGRAM_API_URL, tag]];
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@tags/%@/media/recent", INSTAGRAM_API_URL, tag]];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     // setup request
     NSMutableURLRequest *request = [NSMutableURLRequest new];
-    [request setURL:mediaURL];
+    [request setURL:requestURL];
     [request setHTTPMethod:@"GET"];
+    [request setValue:[NSString stringWithFormat:@"token %@", self.instagramToken] forHTTPHeaderField:@"Authorization"];
     
-    // PROBLEM IS HERE!
-    [request setValue:[NSString stringWithFormat:@"access_token:%@", self.instagramToken] forKey:@"Authorization"];
+    NSLog(@"Request: %@", request.HTTPBody);
     
     // setup dataTask
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
