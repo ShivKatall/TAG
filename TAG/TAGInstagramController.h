@@ -11,8 +11,10 @@
 @interface TAGInstagramController : NSObject
 
 @property (nonatomic, strong) NSString *instagramToken;
+@property (nonatomic, strong) NSURL *fetchURL;
 
 -(void)gainOAuthAccessWithURL:(NSURL *)url;
 -(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock;
+
 
 @end

@@ -92,7 +92,8 @@
         }
         
         NSLog(@"%@", response.description);
-        NSString *token = [self createTokenFromResponseData:data];
+        NSString *rawToken = [self createRawTokenFromResponseData:data];
+        NSString *token = [self createTokenFromRawToken:rawToken];
         [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"instagramoauthtoken"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }];
@@ -100,9 +101,9 @@
     [tokenDataTask resume];
 }
 
--(NSString *)createTokenFromResponseData:(NSData *)data
+-(NSString *)createRawTokenFromResponseData:(NSData *)data
 {
-    NSString *tokenResponse     = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    NSString *tokenResponse     = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSArray *tokenComponents    = [tokenResponse componentsSeparatedByString:@"&"];
     NSString *tokenWithCode     = tokenComponents[0];
     NSArray *tokenArray         = [tokenWithCode componentsSeparatedByString:@":"];
@@ -112,12 +113,32 @@
     return tokenArray[1];
 }
 
+-(NSString *)createTokenFromRawToken:(NSString *)rawToken
+{
+    // This method was needed because response token data looked something like: "ACCESS_TOKEN","user"
+    NSArray *rawTokenComponents = [rawToken componentsSeparatedByString:@","];
+    NSString *tokenWithQuotations = rawTokenComponents[0];
+    NSString *token = [tokenWithQuotations stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    
+    return token;
+}
+
 #pragma mark API Methods
 
 -(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
 {
     // set parameters
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@tags/%@/media/recent?access_token=%@", INSTAGRAM_API_URL, tag, self.instagramToken]];
+    
+    NSString *requestString = [[NSString alloc] initWithFormat:@"%@tags/%@/media/recent?access_token=%@", INSTAGRAM_API_URL, tag, self.instagramToken];
+    
+    NSLog(@"requestString: %@", requestString);
+    
+    NSURL *requestURL = [[NSURL alloc] initWithString:requestString];
+    _fetchURL = requestURL;
+    
+    NSLog(@"fetchURL: %@", _fetchURL.path);
+    NSLog(@"requestURL: %@", requestURL.path);
+    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
@@ -129,7 +150,6 @@
     
     NSLog(@"Request: %@", request.HTTPBody);
     NSLog(@"Token: %@", self.instagramToken);
-    NSLog(@"URL %@", request.URL);
     
     // setup dataTask
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -148,9 +168,11 @@
         [rawDataArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             TAGInstagramPost *newInstagramPost = [TAGInstagramPost new];
             newInstagramPost.user = [obj objectForKey:@"username"];
-            NSDictionary *caption = [obj objectForKey:@"caption"];
-            newInstagramPost.caption = [caption objectForKey:@"text"];
+            newInstagramPost.caption = [obj objectForKey:@"text"];
+            
             [instagramPosts addObject:newInstagramPost];
+            
+            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.user, newInstagramPost.caption);
         }];
         
         completionBlock(instagramPosts);

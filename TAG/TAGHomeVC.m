@@ -9,6 +9,8 @@
 #import "TAGAppDelegate.h"
 #import "TAGHomeVC.h"
 #import "TAGTwitterController.h"
+#import "TAGInstagramController.h"
+#import "TAGInstagramPost.h"
 
 
 @interface TAGHomeVC ()
@@ -42,7 +44,7 @@
     
     if (_instagramController.instagramToken) {
         [_instagramController fetchInstagramPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
-            NSLog(@"%@", instagramPosts);
+            
         }];
     }
 }
