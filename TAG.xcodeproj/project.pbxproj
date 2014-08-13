@@ -27,6 +27,12 @@
 		3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6719942545007BF34B /* TAGTwitterController.m */; };
 		3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6C1994257A007BF34B /* TAGInstagramController.m */; };
 		3D252B70199425B4007BF34B /* TAGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6F199425B4007BF34B /* TAGDataController.m */; };
+		3D4DD175199C2C2700424068 /* TAGTextTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD174199C2C2700424068 /* TAGTextTableView.m */; };
+		3D4DD178199C2C5000424068 /* TAGImagesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD177199C2C5000424068 /* TAGImagesTableView.m */; };
+		3D4DD17B199C2C6500424068 /* TAGVideosTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD17A199C2C6500424068 /* TAGVideosTableView.m */; };
+		3D4DD17F199C2C8900424068 /* TAGTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD17E199C2C8900424068 /* TAGTextTableViewCell.m */; };
+		3D4DD183199C2CBF00424068 /* TAGImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD182199C2CBF00424068 /* TAGImagesTableViewCell.m */; };
+		3D4DD187199C2CFB00424068 /* TAGVideosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD186199C2CFB00424068 /* TAGVideosTableViewCell.m */; };
 		3D87754E1994498B000F62A0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87754D1994498B000F62A0 /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +78,18 @@
 		3D252B6C1994257A007BF34B /* TAGInstagramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGInstagramController.m; sourceTree = "<group>"; };
 		3D252B6E199425B4007BF34B /* TAGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGDataController.h; sourceTree = "<group>"; };
 		3D252B6F199425B4007BF34B /* TAGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGDataController.m; sourceTree = "<group>"; };
+		3D4DD173199C2C2700424068 /* TAGTextTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextTableView.h; sourceTree = "<group>"; };
+		3D4DD174199C2C2700424068 /* TAGTextTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextTableView.m; sourceTree = "<group>"; };
+		3D4DD176199C2C5000424068 /* TAGImagesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGImagesTableView.h; sourceTree = "<group>"; };
+		3D4DD177199C2C5000424068 /* TAGImagesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGImagesTableView.m; sourceTree = "<group>"; };
+		3D4DD179199C2C6500424068 /* TAGVideosTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGVideosTableView.h; sourceTree = "<group>"; };
+		3D4DD17A199C2C6500424068 /* TAGVideosTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGVideosTableView.m; sourceTree = "<group>"; };
+		3D4DD17D199C2C8900424068 /* TAGTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextTableViewCell.h; sourceTree = "<group>"; };
+		3D4DD17E199C2C8900424068 /* TAGTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextTableViewCell.m; sourceTree = "<group>"; };
+		3D4DD181199C2CBF00424068 /* TAGImagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGImagesTableViewCell.h; sourceTree = "<group>"; };
+		3D4DD182199C2CBF00424068 /* TAGImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGImagesTableViewCell.m; sourceTree = "<group>"; };
+		3D4DD185199C2CFB00424068 /* TAGVideosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGVideosTableViewCell.h; sourceTree = "<group>"; };
+		3D4DD186199C2CFB00424068 /* TAGVideosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGVideosTableViewCell.m; sourceTree = "<group>"; };
 		3D87754D1994498B000F62A0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -175,10 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				3D252B3E199424A9007BF34B /* Main.storyboard */,
-				3D252B41199424A9007BF34B /* TAGHomeVC.h */,
-				3D252B42199424A9007BF34B /* TAGHomeVC.m */,
-				3D252B61199424D4007BF34B /* TAGDiscoverVC.h */,
-				3D252B62199424D4007BF34B /* TAGDiscoverVC.m */,
+				3D4DD172199C2B9B00424068 /* HomeViewController */,
+				3D4DD17C199C2C6E00424068 /* DiscoverViewController */,
 				3D252B44199424A9007BF34B /* Images.xcassets */,
 			);
 			name = View;
@@ -208,6 +224,60 @@
 				3D14A708199AA5CD00C3E3FF /* TAGInstagramPost.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		3D4DD172199C2B9B00424068 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D252B41199424A9007BF34B /* TAGHomeVC.h */,
+				3D252B42199424A9007BF34B /* TAGHomeVC.m */,
+				3D4DD180199C2C9400424068 /* TextTableView */,
+				3D4DD184199C2CC300424068 /* ImagesTableView */,
+				3D4DD188199C2D0100424068 /* VideosTableView */,
+			);
+			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		3D4DD17C199C2C6E00424068 /* DiscoverViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D252B61199424D4007BF34B /* TAGDiscoverVC.h */,
+				3D252B62199424D4007BF34B /* TAGDiscoverVC.m */,
+			);
+			name = DiscoverViewController;
+			sourceTree = "<group>";
+		};
+		3D4DD180199C2C9400424068 /* TextTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3D4DD173199C2C2700424068 /* TAGTextTableView.h */,
+				3D4DD174199C2C2700424068 /* TAGTextTableView.m */,
+				3D4DD17D199C2C8900424068 /* TAGTextTableViewCell.h */,
+				3D4DD17E199C2C8900424068 /* TAGTextTableViewCell.m */,
+			);
+			name = TextTableView;
+			sourceTree = "<group>";
+		};
+		3D4DD184199C2CC300424068 /* ImagesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3D4DD176199C2C5000424068 /* TAGImagesTableView.h */,
+				3D4DD177199C2C5000424068 /* TAGImagesTableView.m */,
+				3D4DD181199C2CBF00424068 /* TAGImagesTableViewCell.h */,
+				3D4DD182199C2CBF00424068 /* TAGImagesTableViewCell.m */,
+			);
+			name = ImagesTableView;
+			sourceTree = "<group>";
+		};
+		3D4DD188199C2D0100424068 /* VideosTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3D4DD179199C2C6500424068 /* TAGVideosTableView.h */,
+				3D4DD17A199C2C6500424068 /* TAGVideosTableView.m */,
+				3D4DD185199C2CFB00424068 /* TAGVideosTableViewCell.h */,
+				3D4DD186199C2CFB00424068 /* TAGVideosTableViewCell.m */,
+			);
+			name = VideosTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,14 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4DD17B199C2C6500424068 /* TAGVideosTableView.m in Sources */,
+				3D4DD178199C2C5000424068 /* TAGImagesTableView.m in Sources */,
+				3D4DD183199C2CBF00424068 /* TAGImagesTableViewCell.m in Sources */,
 				3D252B43199424A9007BF34B /* TAGHomeVC.m in Sources */,
 				3D252B70199425B4007BF34B /* TAGDataController.m in Sources */,
 				3D252B39199424A9007BF34B /* main.m in Sources */,
 				3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */,
 				3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */,
+				3D4DD175199C2C2700424068 /* TAGTextTableView.m in Sources */,
+				3D4DD187199C2CFB00424068 /* TAGVideosTableViewCell.m in Sources */,
 				3D14A709199AA5CD00C3E3FF /* TAGInstagramPost.m in Sources */,
 				3D14A70C199AA5E100C3E3FF /* TAGTwitterPost.m in Sources */,
 				3D252B63199424D4007BF34B /* TAGDiscoverVC.m in Sources */,
+				3D4DD17F199C2C8900424068 /* TAGTextTableViewCell.m in Sources */,
 				3D252B3D199424A9007BF34B /* TAGAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
