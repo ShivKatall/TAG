@@ -1,13 +1,13 @@
 //
-//  TAGImagesTableView.h
+//  TAGHomeCollectionView.m
 //  TAG
 //
 //  Created by Cole Bratcher on 8/14/14.
 //  Copyright (c) 2014 TAG. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TAGHomeCollectionView.h"
 
-@interface TAGImagesTableView : UITableView
+@implementation TAGHomeCollectionView
 
 @end

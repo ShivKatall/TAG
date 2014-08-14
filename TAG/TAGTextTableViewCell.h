@@ -10,4 +10,6 @@
 
 @interface TAGTextTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) NSString *source;
+
 @end

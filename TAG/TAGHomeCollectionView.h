@@ -1,5 +1,5 @@
 //
-//  TAGImagesTableView.h
+//  TAGHomeCollectionView.h
 //  TAG
 //
 //  Created by Cole Bratcher on 8/14/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TAGImagesTableView : UITableView
+@interface TAGHomeCollectionView : UICollectionView
 
 @end

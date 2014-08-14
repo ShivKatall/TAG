@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--HomeVC - Item 1-->
+        <!--Home View Controller - Item 1-->
         <scene sceneID="1gt-uU-AdW">
             <objects>
-                <viewController id="7qn-oF-tlp" customClass="TAGHomeVC" sceneMemberID="viewController">
+                <viewController id="7qn-oF-tlp" customClass="TAGHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ICT-CR-iN1"/>
                         <viewControllerLayoutGuide type="bottom" id="0kH-Ta-pTF"/>
@@ -26,7 +26,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z5y-M4-0uM">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z5y-M4-0uM" customClass="TAGTextCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -38,7 +38,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PD1-LQ-jhA">
+                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PD1-LQ-jhA" customClass="TAGTextTableViewCell">
                                                             <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PD1-LQ-jhA" id="s3j-14-N1X">
@@ -52,6 +52,9 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="320" height="568"/>
+                                        <connections>
+                                            <outlet property="textTableView" destination="fBt-FH-mgi" id="5cY-tA-ikm"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bLv-80-pjY">
                                         <rect key="frame" x="330" y="1" width="320" height="566"/>
@@ -65,7 +68,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HZD-Sw-Tan">
+                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HZD-Sw-Tan" customClass="TAGImagesTableViewCell">
                                                             <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HZD-Sw-Tan" id="mFk-3l-DeQ">
@@ -91,7 +94,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="B2D-AZ-oGp">
+                                                        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="B2D-AZ-oGp" customClass="TAGVideosTableViewCell">
                                                             <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B2D-AZ-oGp" id="Kkl-9f-maS">
@@ -120,7 +123,7 @@
         <scene sceneID="Tsc-i8-bOc">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="f1f-T5-YvK" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="aep-VJ-Qsh">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

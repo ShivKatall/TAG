@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 TAG. All rights reserved.
 //
 
-#import "TAGDiscoverVC.h"
+#import "TAGDiscoverViewController.h"
 
-@interface TAGDiscoverVC ()
+@interface TAGDiscoverViewController ()
 
 @end
 
-@implementation TAGDiscoverVC
+@implementation TAGDiscoverViewController
 
 - (void)viewDidLoad
 {

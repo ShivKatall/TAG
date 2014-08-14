@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TAGDiscoverVC : UIViewController
+@interface TAGDiscoverViewController : UIViewController
 
 @end

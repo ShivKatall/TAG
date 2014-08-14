@@ -7,13 +7,13 @@
 //
 
 #import "TAGAppDelegate.h"
-#import "TAGHomeVC.h"
+#import "TAGHomeViewController.h"
 #import "TAGTwitterController.h"
 #import "TAGInstagramController.h"
 #import "TAGInstagramPost.h"
 
 
-@interface TAGHomeVC ()
+@interface TAGHomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) TAGAppDelegate *appDelegate;
 @property (nonatomic, strong) TAGTwitterController *twitterController;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation TAGHomeVC
+@implementation TAGHomeViewController
 
 - (void)viewDidLoad
 {
@@ -54,5 +54,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UICollectionView Methods
+
+
 
 @end

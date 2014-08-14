@@ -16,23 +16,24 @@
 		3D252B39199424A9007BF34B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B38199424A9007BF34B /* main.m */; };
 		3D252B3D199424A9007BF34B /* TAGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B3C199424A9007BF34B /* TAGAppDelegate.m */; };
 		3D252B40199424A9007BF34B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D252B3E199424A9007BF34B /* Main.storyboard */; };
-		3D252B43199424A9007BF34B /* TAGHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B42199424A9007BF34B /* TAGHomeVC.m */; };
+		3D252B43199424A9007BF34B /* TAGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B42199424A9007BF34B /* TAGHomeViewController.m */; };
 		3D252B45199424A9007BF34B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D252B44199424A9007BF34B /* Images.xcassets */; };
 		3D252B4C199424A9007BF34B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D252B4B199424A9007BF34B /* XCTest.framework */; };
 		3D252B4D199424A9007BF34B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D252B2C199424A9007BF34B /* Foundation.framework */; };
 		3D252B4E199424A9007BF34B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D252B30199424A9007BF34B /* UIKit.framework */; };
 		3D252B56199424A9007BF34B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D252B54199424A9007BF34B /* InfoPlist.strings */; };
 		3D252B58199424A9007BF34B /* TAGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B57199424A9007BF34B /* TAGTests.m */; };
-		3D252B63199424D4007BF34B /* TAGDiscoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B62199424D4007BF34B /* TAGDiscoverVC.m */; };
+		3D252B63199424D4007BF34B /* TAGDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B62199424D4007BF34B /* TAGDiscoverViewController.m */; };
 		3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6719942545007BF34B /* TAGTwitterController.m */; };
 		3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6C1994257A007BF34B /* TAGInstagramController.m */; };
 		3D252B70199425B4007BF34B /* TAGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6F199425B4007BF34B /* TAGDataController.m */; };
-		3D4DD175199C2C2700424068 /* TAGTextTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD174199C2C2700424068 /* TAGTextTableView.m */; };
-		3D4DD178199C2C5000424068 /* TAGImagesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD177199C2C5000424068 /* TAGImagesTableView.m */; };
-		3D4DD17B199C2C6500424068 /* TAGVideosTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD17A199C2C6500424068 /* TAGVideosTableView.m */; };
 		3D4DD17F199C2C8900424068 /* TAGTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD17E199C2C8900424068 /* TAGTextTableViewCell.m */; };
 		3D4DD183199C2CBF00424068 /* TAGImagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD182199C2CBF00424068 /* TAGImagesTableViewCell.m */; };
 		3D4DD187199C2CFB00424068 /* TAGVideosTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4DD186199C2CFB00424068 /* TAGVideosTableViewCell.m */; };
+		3D81FCAA199D386A001FA80B /* TAGTextCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FCA9199D386A001FA80B /* TAGTextCollectionViewCell.m */; };
+		3D81FCAD199D3984001FA80B /* TAGTextTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FCAC199D3984001FA80B /* TAGTextTableView.m */; };
+		3D81FCB0199D39A0001FA80B /* TAGImagesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FCAF199D39A0001FA80B /* TAGImagesTableView.m */; };
+		3D81FCB3199D39E1001FA80B /* TAGVideosTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D81FCB2199D39E1001FA80B /* TAGVideosTableView.m */; };
 		3D87754E1994498B000F62A0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87754D1994498B000F62A0 /* Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,34 +63,36 @@
 		3D252B3B199424A9007BF34B /* TAGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGAppDelegate.h; sourceTree = "<group>"; };
 		3D252B3C199424A9007BF34B /* TAGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGAppDelegate.m; sourceTree = "<group>"; };
 		3D252B3F199424A9007BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3D252B41199424A9007BF34B /* TAGHomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGHomeVC.h; sourceTree = "<group>"; };
-		3D252B42199424A9007BF34B /* TAGHomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGHomeVC.m; sourceTree = "<group>"; };
+		3D252B41199424A9007BF34B /* TAGHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGHomeViewController.h; sourceTree = "<group>"; };
+		3D252B42199424A9007BF34B /* TAGHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGHomeViewController.m; sourceTree = "<group>"; };
 		3D252B44199424A9007BF34B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D252B4A199424A9007BF34B /* TAGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TAGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D252B4B199424A9007BF34B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3D252B53199424A9007BF34B /* TAGTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TAGTests-Info.plist"; sourceTree = "<group>"; };
 		3D252B55199424A9007BF34B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3D252B57199424A9007BF34B /* TAGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGTests.m; sourceTree = "<group>"; };
-		3D252B61199424D4007BF34B /* TAGDiscoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGDiscoverVC.h; sourceTree = "<group>"; };
-		3D252B62199424D4007BF34B /* TAGDiscoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGDiscoverVC.m; sourceTree = "<group>"; };
+		3D252B61199424D4007BF34B /* TAGDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGDiscoverViewController.h; sourceTree = "<group>"; };
+		3D252B62199424D4007BF34B /* TAGDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGDiscoverViewController.m; sourceTree = "<group>"; };
 		3D252B6619942545007BF34B /* TAGTwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTwitterController.h; sourceTree = "<group>"; };
 		3D252B6719942545007BF34B /* TAGTwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTwitterController.m; sourceTree = "<group>"; };
 		3D252B6B1994257A007BF34B /* TAGInstagramController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGInstagramController.h; sourceTree = "<group>"; };
 		3D252B6C1994257A007BF34B /* TAGInstagramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGInstagramController.m; sourceTree = "<group>"; };
 		3D252B6E199425B4007BF34B /* TAGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGDataController.h; sourceTree = "<group>"; };
 		3D252B6F199425B4007BF34B /* TAGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGDataController.m; sourceTree = "<group>"; };
-		3D4DD173199C2C2700424068 /* TAGTextTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextTableView.h; sourceTree = "<group>"; };
-		3D4DD174199C2C2700424068 /* TAGTextTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextTableView.m; sourceTree = "<group>"; };
-		3D4DD176199C2C5000424068 /* TAGImagesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGImagesTableView.h; sourceTree = "<group>"; };
-		3D4DD177199C2C5000424068 /* TAGImagesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGImagesTableView.m; sourceTree = "<group>"; };
-		3D4DD179199C2C6500424068 /* TAGVideosTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGVideosTableView.h; sourceTree = "<group>"; };
-		3D4DD17A199C2C6500424068 /* TAGVideosTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGVideosTableView.m; sourceTree = "<group>"; };
 		3D4DD17D199C2C8900424068 /* TAGTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextTableViewCell.h; sourceTree = "<group>"; };
 		3D4DD17E199C2C8900424068 /* TAGTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextTableViewCell.m; sourceTree = "<group>"; };
 		3D4DD181199C2CBF00424068 /* TAGImagesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGImagesTableViewCell.h; sourceTree = "<group>"; };
 		3D4DD182199C2CBF00424068 /* TAGImagesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGImagesTableViewCell.m; sourceTree = "<group>"; };
 		3D4DD185199C2CFB00424068 /* TAGVideosTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGVideosTableViewCell.h; sourceTree = "<group>"; };
 		3D4DD186199C2CFB00424068 /* TAGVideosTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGVideosTableViewCell.m; sourceTree = "<group>"; };
+		3D81FCA8199D386A001FA80B /* TAGTextCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextCollectionViewCell.h; sourceTree = "<group>"; };
+		3D81FCA9199D386A001FA80B /* TAGTextCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextCollectionViewCell.m; sourceTree = "<group>"; };
+		3D81FCAB199D3984001FA80B /* TAGTextTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextTableView.h; sourceTree = "<group>"; };
+		3D81FCAC199D3984001FA80B /* TAGTextTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextTableView.m; sourceTree = "<group>"; };
+		3D81FCAE199D39A0001FA80B /* TAGImagesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGImagesTableView.h; sourceTree = "<group>"; };
+		3D81FCAF199D39A0001FA80B /* TAGImagesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGImagesTableView.m; sourceTree = "<group>"; };
+		3D81FCB1199D39E1001FA80B /* TAGVideosTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGVideosTableView.h; sourceTree = "<group>"; };
+		3D81FCB2199D39E1001FA80B /* TAGVideosTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGVideosTableView.m; sourceTree = "<group>"; };
 		3D87754D1994498B000F62A0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -229,8 +232,8 @@
 		3D4DD172199C2B9B00424068 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3D252B41199424A9007BF34B /* TAGHomeVC.h */,
-				3D252B42199424A9007BF34B /* TAGHomeVC.m */,
+				3D252B41199424A9007BF34B /* TAGHomeViewController.h */,
+				3D252B42199424A9007BF34B /* TAGHomeViewController.m */,
 				3D4DD180199C2C9400424068 /* TextTableView */,
 				3D4DD184199C2CC300424068 /* ImagesTableView */,
 				3D4DD188199C2D0100424068 /* VideosTableView */,
@@ -241,8 +244,8 @@
 		3D4DD17C199C2C6E00424068 /* DiscoverViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3D252B61199424D4007BF34B /* TAGDiscoverVC.h */,
-				3D252B62199424D4007BF34B /* TAGDiscoverVC.m */,
+				3D252B61199424D4007BF34B /* TAGDiscoverViewController.h */,
+				3D252B62199424D4007BF34B /* TAGDiscoverViewController.m */,
 			);
 			name = DiscoverViewController;
 			sourceTree = "<group>";
@@ -250,8 +253,10 @@
 		3D4DD180199C2C9400424068 /* TextTableView */ = {
 			isa = PBXGroup;
 			children = (
-				3D4DD173199C2C2700424068 /* TAGTextTableView.h */,
-				3D4DD174199C2C2700424068 /* TAGTextTableView.m */,
+				3D81FCA8199D386A001FA80B /* TAGTextCollectionViewCell.h */,
+				3D81FCA9199D386A001FA80B /* TAGTextCollectionViewCell.m */,
+				3D81FCAB199D3984001FA80B /* TAGTextTableView.h */,
+				3D81FCAC199D3984001FA80B /* TAGTextTableView.m */,
 				3D4DD17D199C2C8900424068 /* TAGTextTableViewCell.h */,
 				3D4DD17E199C2C8900424068 /* TAGTextTableViewCell.m */,
 			);
@@ -261,8 +266,8 @@
 		3D4DD184199C2CC300424068 /* ImagesTableView */ = {
 			isa = PBXGroup;
 			children = (
-				3D4DD176199C2C5000424068 /* TAGImagesTableView.h */,
-				3D4DD177199C2C5000424068 /* TAGImagesTableView.m */,
+				3D81FCAE199D39A0001FA80B /* TAGImagesTableView.h */,
+				3D81FCAF199D39A0001FA80B /* TAGImagesTableView.m */,
 				3D4DD181199C2CBF00424068 /* TAGImagesTableViewCell.h */,
 				3D4DD182199C2CBF00424068 /* TAGImagesTableViewCell.m */,
 			);
@@ -272,8 +277,8 @@
 		3D4DD188199C2D0100424068 /* VideosTableView */ = {
 			isa = PBXGroup;
 			children = (
-				3D4DD179199C2C6500424068 /* TAGVideosTableView.h */,
-				3D4DD17A199C2C6500424068 /* TAGVideosTableView.m */,
+				3D81FCB1199D39E1001FA80B /* TAGVideosTableView.h */,
+				3D81FCB2199D39E1001FA80B /* TAGVideosTableView.m */,
 				3D4DD185199C2CFB00424068 /* TAGVideosTableViewCell.h */,
 				3D4DD186199C2CFB00424068 /* TAGVideosTableViewCell.m */,
 			);
@@ -378,21 +383,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D4DD17B199C2C6500424068 /* TAGVideosTableView.m in Sources */,
-				3D4DD178199C2C5000424068 /* TAGImagesTableView.m in Sources */,
 				3D4DD183199C2CBF00424068 /* TAGImagesTableViewCell.m in Sources */,
-				3D252B43199424A9007BF34B /* TAGHomeVC.m in Sources */,
+				3D81FCAA199D386A001FA80B /* TAGTextCollectionViewCell.m in Sources */,
+				3D252B43199424A9007BF34B /* TAGHomeViewController.m in Sources */,
 				3D252B70199425B4007BF34B /* TAGDataController.m in Sources */,
 				3D252B39199424A9007BF34B /* main.m in Sources */,
+				3D81FCB0199D39A0001FA80B /* TAGImagesTableView.m in Sources */,
 				3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */,
 				3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */,
-				3D4DD175199C2C2700424068 /* TAGTextTableView.m in Sources */,
+				3D81FCB3199D39E1001FA80B /* TAGVideosTableView.m in Sources */,
 				3D4DD187199C2CFB00424068 /* TAGVideosTableViewCell.m in Sources */,
 				3D14A709199AA5CD00C3E3FF /* TAGInstagramPost.m in Sources */,
 				3D14A70C199AA5E100C3E3FF /* TAGTwitterPost.m in Sources */,
-				3D252B63199424D4007BF34B /* TAGDiscoverVC.m in Sources */,
+				3D252B63199424D4007BF34B /* TAGDiscoverViewController.m in Sources */,
 				3D4DD17F199C2C8900424068 /* TAGTextTableViewCell.m in Sources */,
 				3D252B3D199424A9007BF34B /* TAGAppDelegate.m in Sources */,
+				3D81FCAD199D3984001FA80B /* TAGTextTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
