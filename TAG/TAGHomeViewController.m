@@ -37,7 +37,7 @@
     
     // setup twitter
     _twitterController = _appDelegate.twitterController;
-    //    [_twitterController fetchSearchResultsForQuery:@"KanyeWest"];
+    [_twitterController fetchSearchResultsForQuery:@"KanyeWest"];
     
     // setup instagram
     _instagramController = _appDelegate.instagramController;
@@ -57,6 +57,9 @@
 
 #pragma mark - UICollectionView Methods
 
-
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 3;
+}
 
 @end

@@ -167,15 +167,36 @@
         
         [rawDataArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             TAGInstagramPost *newInstagramPost = [TAGInstagramPost new];
-            newInstagramPost.user = [obj objectForKey:@"username"];
-            newInstagramPost.caption = [obj objectForKey:@"text"];
+            
+            // User
+            NSDictionary *userDictionary = [NSDictionary new];
+            if ([obj objectForKey:@"user"]) {
+                userDictionary = [obj objectForKey:@"user"];
+            }
+            if ([userDictionary objectForKey:@"username"]) {
+                newInstagramPost.userName = [userDictionary objectForKey:@"username"];
+            }
+            if ([userDictionary objectForKey:@"full_name"]) {
+                newInstagramPost.fullName = [userDictionary objectForKey:@"full_name"];
+            }
+//            newInstagramPost.profilePicture = [userDictionary objectForKey:@"profile_picture"];
+            
+            // Caption
+            NSDictionary *captionDictionary = [NSDictionary new];
+            if ([obj objectForKey:@"caption"]) {
+                captionDictionary = [obj objectForKey:@"caption"];
+            }
+            if ([captionDictionary objectForKey:@"text"]) {
+                newInstagramPost.caption = [captionDictionary objectForKey:@"text"];
+            }
             
             [instagramPosts addObject:newInstagramPost];
             
-            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.user, newInstagramPost.caption);
+            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.userName, newInstagramPost.caption);
         }];
-        
         completionBlock(instagramPosts);
+        
+        _currentInstagramPosts = instagramPosts;
     }];
     
     [dataTask resume];

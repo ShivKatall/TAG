@@ -10,7 +10,8 @@
 
 @interface TAGTwitterController : NSObject
 
-@property (strong,nonatomic) NSString *token;
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSArray *currentTwitterPosts;
 
 -(void)fetchSearchResultsForQuery:(NSString *)query;
 

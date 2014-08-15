@@ -1,5 +1,5 @@
 //
-//  TAGHomeCollectionViewCell.h
+//  TAGTextCollectionView.h
 //  TAG
 //
 //  Created by Cole Bratcher on 8/14/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TAGTextCollectionViewCell : UICollectionViewCell
+@interface TAGTextCollectionView : UICollectionView
 
 @end
