@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D12FD2719A5380D0084595C /* TAGTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D12FD2619A5380D0084595C /* TAGTextCell.m */; };
 		3D14A709199AA5CD00C3E3FF /* TAGInstagramPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D14A708199AA5CD00C3E3FF /* TAGInstagramPost.m */; };
 		3D14A70C199AA5E100C3E3FF /* TAGTwitterPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D14A70B199AA5E100C3E3FF /* TAGTwitterPost.m */; };
 		3D1A2DCF199D46610061ACDA /* TAGTextCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A2DCE199D46610061ACDA /* TAGTextCollectionView.m */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		131AB42D8087435C8B0090FC /* Pods-TAG.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TAG.xcconfig"; path = "Pods/Pods-TAG.xcconfig"; sourceTree = "<group>"; };
+		3D12FD2519A5380D0084595C /* TAGTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTextCell.h; sourceTree = "<group>"; };
+		3D12FD2619A5380D0084595C /* TAGTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGTextCell.m; sourceTree = "<group>"; };
 		3D14A707199AA5CD00C3E3FF /* TAGInstagramPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGInstagramPost.h; sourceTree = "<group>"; };
 		3D14A708199AA5CD00C3E3FF /* TAGInstagramPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGInstagramPost.m; sourceTree = "<group>"; };
 		3D14A70A199AA5E100C3E3FF /* TAGTwitterPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGTwitterPost.h; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				3D81FCA9199D386A001FA80B /* TAGHomeTextCollectionViewCell.m */,
 				3D1A2DCD199D46610061ACDA /* TAGTextCollectionView.h */,
 				3D1A2DCE199D46610061ACDA /* TAGTextCollectionView.m */,
+				3D12FD2519A5380D0084595C /* TAGTextCell.h */,
+				3D12FD2619A5380D0084595C /* TAGTextCell.m */,
 			);
 			name = TextTableView;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				3D252B70199425B4007BF34B /* TAGDataController.m in Sources */,
 				3D252B39199424A9007BF34B /* main.m in Sources */,
 				3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */,
+				3D12FD2719A5380D0084595C /* TAGTextCell.m in Sources */,
 				3D1A2DCF199D46610061ACDA /* TAGTextCollectionView.m in Sources */,
 				3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */,
 				3D14A709199AA5CD00C3E3FF /* TAGInstagramPost.m in Sources */,

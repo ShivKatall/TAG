@@ -1,15 +1,14 @@
 //
-//  TAGTextCollectionView.m
+//  TAGTextCell.m
 //  TAG
 //
-//  Created by Cole Bratcher on 8/14/14.
+//  Created by Cole Bratcher on 8/20/14.
 //  Copyright (c) 2014 TAG. All rights reserved.
 //
 
-#import "TAGTextCollectionView.h"
 #import "TAGTextCell.h"
 
-@implementation TAGTextCollectionView
+@implementation TAGTextCell
 
 - (id)initWithFrame:(CGRect)frame
 {

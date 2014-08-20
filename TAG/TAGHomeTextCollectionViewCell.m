@@ -7,12 +7,13 @@
 //
 
 #import "TAGHomeTextCollectionViewCell.h"
+#import "TAGTextCollectionView.h"
 #import "TAGTextTableView.h"
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
 
 @interface TAGHomeTextCollectionViewCell () <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *textTableView;
+@property (weak, nonatomic) IBOutlet TAGTextCollectionView *TextCollectionView;
 
 @end
 
