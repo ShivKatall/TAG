@@ -10,10 +10,13 @@
 
 @interface TAGInstagramPost : NSObject
 
-@property (nonatomic, strong) UIImage *profilePicture;
+// User
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *fullName;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSString *profilePictureURL;
+
+// Post
+@property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, strong) NSString *caption;
 
 @end

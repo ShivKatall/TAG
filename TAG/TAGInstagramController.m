@@ -161,7 +161,11 @@
         NSDictionary *rawDataDictionary = [NSJSONSerialization JSONObjectWithData:data
                                                                           options:NSJSONReadingMutableContainers
                                                                             error:nil];
-        NSArray *rawDataArray = [rawDataDictionary objectForKey:@"data"];
+        NSArray *rawDataArray = [NSArray new];
+        
+        if ([rawDataDictionary objectForKey:@"data"] != [NSNull null]) {
+            rawDataArray = [rawDataDictionary objectForKey:@"data"];
+        }
         
         NSMutableArray *instagramPosts = [NSMutableArray new];
         
@@ -170,23 +174,25 @@
             
             // User
             NSDictionary *userDictionary = [NSDictionary new];
-            if ([obj objectForKey:@"user"]) {
+            if ([obj objectForKey:@"user"] != [NSNull null]) {
                 userDictionary = [obj objectForKey:@"user"];
             }
-            if ([userDictionary objectForKey:@"username"]) {
+            if ([userDictionary objectForKey:@"username"] != [NSNull null]) {
                 newInstagramPost.userName = [userDictionary objectForKey:@"username"];
             }
-            if ([userDictionary objectForKey:@"full_name"]) {
+            if ([userDictionary objectForKey:@"full_name"] != [NSNull null]) {
                 newInstagramPost.fullName = [userDictionary objectForKey:@"full_name"];
             }
-//            newInstagramPost.profilePicture = [userDictionary objectForKey:@"profile_picture"];
+            if ([userDictionary objectForKey:@"profile_picture"] != [NSNull null]) {
+                newInstagramPost.profilePictureURL = [userDictionary objectForKey:@"profile_picture"];
+            }
             
             // Caption
             NSDictionary *captionDictionary = [NSDictionary new];
-            if ([obj objectForKey:@"caption"]) {
+            if ([obj objectForKey:@"caption"] != [NSNull null]) {
                 captionDictionary = [obj objectForKey:@"caption"];
             }
-            if ([captionDictionary objectForKey:@"text"]) {
+            if ([captionDictionary objectForKey:@"text"] != [NSNull null]) {
                 newInstagramPost.caption = [captionDictionary objectForKey:@"text"];
             }
             
@@ -194,6 +200,7 @@
             
             NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.userName, newInstagramPost.caption);
         }];
+        
         completionBlock(instagramPosts);
         
         _currentInstagramPosts = instagramPosts;

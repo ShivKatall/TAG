@@ -10,4 +10,12 @@
 
 @interface TAGTwitterPost : NSObject
 
+// User
+@property (nonatomic, strong) NSString *profilePictureURL;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *fullName;
+
+// Post
+@property (nonatomic, strong) NSString *textBody;
+
 @end

@@ -9,6 +9,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 #import "TAGTwitterController.h"
+#import "TAGTwitterPost.h"
 
 @interface TAGTwitterController ()
 
@@ -74,12 +75,48 @@
                              if (urlResponse.statusCode == 200) {
                                  
                                  NSError *jsonError;
-                                 NSDictionary *searchData =
+                                 NSDictionary *rawSearchDataDictionary =
                                  [NSJSONSerialization JSONObjectWithData:responseData
-                                                                 options:NSJSONReadingAllowFragments
+                                                                 options:NSJSONReadingMutableContainers
                                                                    error:&jsonError];
-                                 if (searchData) {
-                                     NSLog(@"Search Response: %@\n", searchData);
+                                 if (rawSearchDataDictionary) {
+                                     // Convert searchData into Objects
+                                     NSArray *rawSearchDataArray = [rawSearchDataDictionary objectForKey:@"statuses"];
+                                     NSMutableArray *twitterPosts = [NSMutableArray new];
+                                     
+                                     [rawSearchDataArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                                         TAGTwitterPost *newTwitterPost = [TAGTwitterPost new];
+                                         
+                                         // User
+                                         NSDictionary *userDictionary = [NSDictionary new];
+                                         
+                                         if ([obj objectForKey:@"user"] != [NSNull null]) {
+                                             userDictionary = [obj objectForKey:@"user"];
+                                         }
+                                         
+                                         if ([userDictionary objectForKey:@"name"] != [NSNull null]) {
+                                            newTwitterPost.fullName = [userDictionary objectForKey:@"name"];
+                                         }
+                                         if ([userDictionary objectForKey:@"screen_name"] != [NSNull null]) {
+                                             newTwitterPost.userName = [userDictionary objectForKey:@"screen_name"];
+                                         }
+                                         if ([userDictionary objectForKey:@"profile_image_url"] != [NSNull null]) {
+                                             newTwitterPost.profilePictureURL = [userDictionary objectForKey:@"profile_image_url"];
+                                         }
+                                         
+                                         // Post
+                                         if ([obj objectForKey:@"text"] != [NSNull null]) {
+                                             newTwitterPost.textBody = [obj objectForKey:@"text"];
+                                         }
+                                         
+                                         [twitterPosts addObject:newTwitterPost];
+                                         
+                                         NSLog(@"User: %@ \n Text Body: %@ \n", newTwitterPost.userName, newTwitterPost.textBody);
+                                         
+                                     }];
+                                     
+                                     _currentTwitterPosts = twitterPosts;
+                                     
                                  } else {
                                      // Our JSON deserialization went awry
                                      NSLog(@"JSON Error: %@", [jsonError localizedDescription]);
