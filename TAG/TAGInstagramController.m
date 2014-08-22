@@ -198,12 +198,11 @@
             
             [instagramPosts addObject:newInstagramPost];
             
-            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.userName, newInstagramPost.caption);
+//            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.userName, newInstagramPost.caption);
         }];
         
         completionBlock(instagramPosts);
         
-        _currentInstagramPosts = instagramPosts;
     }];
     
     [dataTask resume];

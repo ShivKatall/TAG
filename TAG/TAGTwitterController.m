@@ -35,8 +35,9 @@
     return [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
 }
 
--(void)fetchSearchResultsForQuery:(NSString *)query
+-(void)fetchSearchResultsForQuery:(NSString *)query withCompletionBlock:(void(^)(NSMutableArray *twitterPosts))completionBlock
 {
+    NSMutableArray *twitterPosts = [NSMutableArray new];
     NSString *hashtagQuery = [self createHashtagQueryFromQuery:query];
     
     if ([self userHasAccessToTwitter]) {
@@ -74,7 +75,7 @@
                          if (responseData) {
                              if (urlResponse.statusCode == 200) {
                                  
-                                 NSError *jsonError;
+                                NSError *jsonError;
                                  NSDictionary *rawSearchDataDictionary =
                                  [NSJSONSerialization JSONObjectWithData:responseData
                                                                  options:NSJSONReadingMutableContainers
@@ -82,7 +83,6 @@
                                  if (rawSearchDataDictionary) {
                                      // Convert searchData into Objects
                                      NSArray *rawSearchDataArray = [rawSearchDataDictionary objectForKey:@"statuses"];
-                                     NSMutableArray *twitterPosts = [NSMutableArray new];
                                      
                                      [rawSearchDataArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                                          TAGTwitterPost *newTwitterPost = [TAGTwitterPost new];
@@ -111,11 +111,10 @@
                                          
                                          [twitterPosts addObject:newTwitterPost];
                                          
-                                         NSLog(@"User: %@ \n Text Body: %@ \n", newTwitterPost.userName, newTwitterPost.textBody);
-                                         
+//                                         NSLog(@"User: %@ \n Text Body: %@ \n", newTwitterPost.userName, newTwitterPost.textBody);
                                      }];
                                      
-                                     _currentTwitterPosts = twitterPosts;
+                                     completionBlock (twitterPosts);
                                      
                                  } else {
                                      // Our JSON deserialization went awry
@@ -133,7 +132,7 @@
                 }
             }];
         }
-    }
+    }   
 }
 
 -(NSString *)createHashtagQueryFromQuery:(NSString *)query
