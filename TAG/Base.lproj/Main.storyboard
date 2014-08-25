@@ -19,9 +19,9 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FXO-6E-xkv">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.90196100000000001" green="0.617587" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.90196100000000001" green="0.617587" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ecY-Pf-5xz">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="ecY-Pf-5xz">
                                     <size key="itemSize" width="316" height="188"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-7q-XeS">
-                                                    <rect key="frame" x="20" y="8" width="63" height="63"/>
+                                                    <rect key="frame" x="20" y="8" width="64" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-EN-aTP">
@@ -66,10 +66,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="fullNameLabel" destination="827-kx-Hzj" id="7O3-1f-jXy"/>
-                                            <outlet property="image" destination="6hK-7q-XeS" id="CyD-SS-BIx"/>
-                                            <outlet property="textBody" destination="3dM-EN-aTP" id="8u4-Ur-IRV"/>
-                                            <outlet property="userNameLabel" destination="boB-Ij-GYe" id="TVw-rl-fAC"/>
+                                            <outlet property="fullNameLabel" destination="827-kx-Hzj" id="Ie3-7n-s8g"/>
+                                            <outlet property="imageView" destination="6hK-7q-XeS" id="Id7-OU-hqM"/>
+                                            <outlet property="textBodyLabel" destination="3dM-EN-aTP" id="y80-5A-ORW"/>
+                                            <outlet property="userNameLabel" destination="boB-Ij-GYe" id="piF-kh-oez"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

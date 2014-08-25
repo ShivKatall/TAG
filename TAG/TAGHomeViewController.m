@@ -35,9 +35,6 @@
     _textCollectionView.delegate = self;
     _textCollectionView.dataSource = self;
     
-    [_textCollectionView registerClass:[TAGTextCell class] forCellWithReuseIdentifier:@"textCell"];
-    
-    
     // setup twitter
     _twitterController = _appDelegate.twitterController;
     [_twitterController fetchSearchResultsForQuery:@"KanyeWest" withCompletionBlock:^(NSMutableArray *twitterPosts) {
@@ -89,9 +86,18 @@
 {
     TAGTextCell *textCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"textCell" forIndexPath:indexPath];
     TAGTwitterPost *twitterPost = [_currentTwitterPosts objectAtIndex:indexPath.row];
-    textCell.fullNameLabel.text = twitterPost.fullName;
-    textCell.userNameLabel.text = twitterPost.userName;
-    textCell.textBody.text      = twitterPost.textBody;
+    
+    // text
+    textCell.fullNameLabel.text = [NSString stringWithFormat:@"%@", twitterPost.fullName];
+    textCell.userNameLabel.text = [NSString stringWithFormat:@"%@", twitterPost.userName];
+    textCell.textBodyLabel.text = [NSString stringWithFormat:@"%@", twitterPost.textBody];
+ 
+    // profile picture
+    textCell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:twitterPost.profilePictureURL]]];
+//    textCell.imageView.layer.cornerRadius = textCell.imageView.image.size.width / 1.5;
+    textCell.imageView.layer.cornerRadius = 32;
+
+    textCell.imageView.layer.masksToBounds = YES;
     
     textCell.backgroundColor = [UIColor whiteColor];
     
