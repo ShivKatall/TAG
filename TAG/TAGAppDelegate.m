@@ -12,6 +12,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor slateGrayColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor slateGrayColor]];
+    
     self.twitterController = [TAGTwitterController new];
     self.instagramController = [TAGInstagramController new];
     

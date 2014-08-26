@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0kH-Ta-pTF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mt2-mn-UcG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FXO-6E-xkv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="textCell" reuseIdentifier="textCell" id="zPJ-D8-css" customClass="TAGTextCell">
-                                        <rect key="frame" x="2" y="64" width="316" height="188"/>
+                                        <rect key="frame" x="2" y="0.0" width="316" height="188"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="316" height="188"/>
@@ -85,6 +85,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLm-zC-Ove" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="614" y="227"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Egz-wf-yKD">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tst-Ic-Pmc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HU5-a5-cS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="930"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ari-nW-IBh">
@@ -174,9 +182,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ko-ze-JVW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="ttk-6z-xfD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="37r-tL-gCD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="37r-tL-gCD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
