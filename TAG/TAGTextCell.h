@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UILabel *textBodyLabel;
 
+//- (void)setUserNameLabelWithAtSymbolFromUserName:(NSString *)userName;
 
 @end

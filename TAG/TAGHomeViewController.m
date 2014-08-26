@@ -89,7 +89,7 @@
     
     // text
     textCell.fullNameLabel.text = [NSString stringWithFormat:@"%@", twitterPost.fullName];
-    textCell.userNameLabel.text = [NSString stringWithFormat:@"%@", twitterPost.userName];
+    textCell.userNameLabel.text = [NSString stringWithFormat:@"@%@", twitterPost.userName];
     textCell.textBodyLabel.text = [NSString stringWithFormat:@"%@", twitterPost.textBody];
  
     // profile picture

@@ -10,4 +10,11 @@
 
 @implementation TAGTextCell
 
+//- (void)setUserNameLabelWithAtSymbolFromUserName:(NSString *)userName
+//{
+//    NSString *userNameWithAtSymbol = [NSString stringWithFormat:@"@%@", userName];
+//    
+//    _userNameLabel.text = userNameWithAtSymbol;
+//}
+
 @end
