@@ -199,7 +199,10 @@
             [instagramPosts addObject:newInstagramPost];
             
 //            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.userName, newInstagramPost.caption);
+        
         }];
+        
+        NSLog(@"Instagram Posts: %lu", (unsigned long)instagramPosts.count);
         
         completionBlock(instagramPosts);
         
