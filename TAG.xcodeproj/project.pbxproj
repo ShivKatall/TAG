@@ -17,7 +17,7 @@
 		3D252B39199424A9007BF34B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B38199424A9007BF34B /* main.m */; };
 		3D252B3D199424A9007BF34B /* TAGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B3C199424A9007BF34B /* TAGAppDelegate.m */; };
 		3D252B40199424A9007BF34B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D252B3E199424A9007BF34B /* Main.storyboard */; };
-		3D252B43199424A9007BF34B /* TAGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B42199424A9007BF34B /* TAGHomeViewController.m */; };
+		3D252B43199424A9007BF34B /* TAGTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B42199424A9007BF34B /* TAGTextViewController.m */; };
 		3D252B45199424A9007BF34B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D252B44199424A9007BF34B /* Images.xcassets */; };
 		3D252B4C199424A9007BF34B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D252B4B199424A9007BF34B /* XCTest.framework */; };
 		3D252B4D199424A9007BF34B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D252B2C199424A9007BF34B /* Foundation.framework */; };
@@ -29,8 +29,8 @@
 		3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6C1994257A007BF34B /* TAGInstagramController.m */; };
 		3D252B70199425B4007BF34B /* TAGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D252B6F199425B4007BF34B /* TAGDataController.m */; };
 		3D7CDEB019AD34FB000FA056 /* UIColor+TAGColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */; };
-		3D7CDEB319AD3F5C000FA056 /* TAGHomePageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CDEB219AD3F5C000FA056 /* TAGHomePageContentViewController.m */; };
 		3D87754E1994498B000F62A0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87754D1994498B000F62A0 /* Social.framework */; };
+		3DD9390B19AE7D0400FA9C0F /* TAGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */; };
 		A852E8BEC8AA40F29F2A44BF /* libPods-TAG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A74B2BE8732B4063A840C252 /* libPods-TAG.a */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,8 @@
 		3D252B3B199424A9007BF34B /* TAGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGAppDelegate.h; sourceTree = "<group>"; };
 		3D252B3C199424A9007BF34B /* TAGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGAppDelegate.m; sourceTree = "<group>"; };
 		3D252B3F199424A9007BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3D252B41199424A9007BF34B /* TAGHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGHomeViewController.h; sourceTree = "<group>"; };
-		3D252B42199424A9007BF34B /* TAGHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGHomeViewController.m; sourceTree = "<group>"; };
+		3D252B41199424A9007BF34B /* TAGTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAGTextViewController.h; sourceTree = "<group>"; };
+		3D252B42199424A9007BF34B /* TAGTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAGTextViewController.m; sourceTree = "<group>"; };
 		3D252B44199424A9007BF34B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D252B4A199424A9007BF34B /* TAGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TAGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D252B4B199424A9007BF34B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -81,9 +81,9 @@
 		3D252B6F199425B4007BF34B /* TAGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGDataController.m; sourceTree = "<group>"; };
 		3D7CDEAE19AD34FB000FA056 /* UIColor+TAGColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+TAGColors.h"; sourceTree = "<group>"; };
 		3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAGColors.m"; sourceTree = "<group>"; };
-		3D7CDEB119AD3F5C000FA056 /* TAGHomePageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGHomePageContentViewController.h; sourceTree = "<group>"; };
-		3D7CDEB219AD3F5C000FA056 /* TAGHomePageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGHomePageContentViewController.m; sourceTree = "<group>"; };
 		3D87754D1994498B000F62A0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		3DD9390919AE7D0400FA9C0F /* TAGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGHomeViewController.h; sourceTree = "<group>"; };
+		3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGHomeViewController.m; sourceTree = "<group>"; };
 		A74B2BE8732B4063A840C252 /* libPods-TAG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,8 +192,6 @@
 				3D252B3E199424A9007BF34B /* Main.storyboard */,
 				3D7CDEAE19AD34FB000FA056 /* UIColor+TAGColors.h */,
 				3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */,
-				3D7CDEB119AD3F5C000FA056 /* TAGHomePageContentViewController.h */,
-				3D7CDEB219AD3F5C000FA056 /* TAGHomePageContentViewController.m */,
 				3D4DD172199C2B9B00424068 /* HomeViewController */,
 				3D4DD17C199C2C6E00424068 /* DiscoverViewController */,
 				3D252B44199424A9007BF34B /* Images.xcassets */,
@@ -230,9 +228,9 @@
 		3D4DD172199C2B9B00424068 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3D252B41199424A9007BF34B /* TAGHomeViewController.h */,
-				3D252B42199424A9007BF34B /* TAGHomeViewController.m */,
-				3D4DD180199C2C9400424068 /* TextTableView */,
+				3DD9390919AE7D0400FA9C0F /* TAGHomeViewController.h */,
+				3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */,
+				3D4DD180199C2C9400424068 /* TextCollectionViewController */,
 				3D4DD184199C2CC300424068 /* ImagesTableView */,
 				3D4DD188199C2D0100424068 /* VideosTableView */,
 			);
@@ -248,13 +246,15 @@
 			name = DiscoverViewController;
 			sourceTree = "<group>";
 		};
-		3D4DD180199C2C9400424068 /* TextTableView */ = {
+		3D4DD180199C2C9400424068 /* TextCollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3D12FD2519A5380D0084595C /* TAGTextCell.h */,
 				3D12FD2619A5380D0084595C /* TAGTextCell.m */,
+				3D252B41199424A9007BF34B /* TAGTextViewController.h */,
+				3D252B42199424A9007BF34B /* TAGTextViewController.m */,
 			);
-			name = TextTableView;
+			name = TextCollectionViewController;
 			sourceTree = "<group>";
 		};
 		3D4DD184199C2CC300424068 /* ImagesTableView */ = {
@@ -405,7 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D7CDEB019AD34FB000FA056 /* UIColor+TAGColors.m in Sources */,
-				3D252B43199424A9007BF34B /* TAGHomeViewController.m in Sources */,
+				3D252B43199424A9007BF34B /* TAGTextViewController.m in Sources */,
+				3DD9390B19AE7D0400FA9C0F /* TAGHomeViewController.m in Sources */,
 				3D252B70199425B4007BF34B /* TAGDataController.m in Sources */,
 				3D252B39199424A9007BF34B /* main.m in Sources */,
 				3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */,
@@ -413,7 +414,6 @@
 				3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */,
 				3D14A709199AA5CD00C3E3FF /* TAGInstagramPost.m in Sources */,
 				3D14A70C199AA5E100C3E3FF /* TAGTwitterPost.m in Sources */,
-				3D7CDEB319AD3F5C000FA056 /* TAGHomePageContentViewController.m in Sources */,
 				3D252B63199424D4007BF34B /* TAGDiscoverViewController.m in Sources */,
 				3D252B3D199424A9007BF34B /* TAGAppDelegate.m in Sources */,
 			);
