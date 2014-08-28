@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TAGHomeContentViewController.h"
 
-@interface TAGTextViewController : UIViewController 
+@interface TAGTextViewController : TAGHomeContentViewController
 
 @property NSUInteger pageIndex;
 

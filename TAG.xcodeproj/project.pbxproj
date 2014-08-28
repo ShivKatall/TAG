@@ -31,6 +31,7 @@
 		3D7CDEB019AD34FB000FA056 /* UIColor+TAGColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */; };
 		3D87754E1994498B000F62A0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87754D1994498B000F62A0 /* Social.framework */; };
 		3DD9390B19AE7D0400FA9C0F /* TAGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */; };
+		3DDC555E19AFA7EC006DB66B /* TAGHomeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC555D19AFA7EC006DB66B /* TAGHomeContentViewController.m */; };
 		A852E8BEC8AA40F29F2A44BF /* libPods-TAG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A74B2BE8732B4063A840C252 /* libPods-TAG.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		3D87754D1994498B000F62A0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3DD9390919AE7D0400FA9C0F /* TAGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGHomeViewController.h; sourceTree = "<group>"; };
 		3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGHomeViewController.m; sourceTree = "<group>"; };
+		3DDC555C19AFA7EC006DB66B /* TAGHomeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGHomeContentViewController.h; sourceTree = "<group>"; };
+		3DDC555D19AFA7EC006DB66B /* TAGHomeContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGHomeContentViewController.m; sourceTree = "<group>"; };
 		A74B2BE8732B4063A840C252 /* libPods-TAG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TAG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -230,6 +233,8 @@
 			children = (
 				3DD9390919AE7D0400FA9C0F /* TAGHomeViewController.h */,
 				3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */,
+				3DDC555C19AFA7EC006DB66B /* TAGHomeContentViewController.h */,
+				3DDC555D19AFA7EC006DB66B /* TAGHomeContentViewController.m */,
 				3D4DD180199C2C9400424068 /* TextCollectionViewController */,
 				3D4DD184199C2CC300424068 /* ImagesTableView */,
 				3D4DD188199C2D0100424068 /* VideosTableView */,
@@ -410,6 +415,7 @@
 				3D252B70199425B4007BF34B /* TAGDataController.m in Sources */,
 				3D252B39199424A9007BF34B /* main.m in Sources */,
 				3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */,
+				3DDC555E19AFA7EC006DB66B /* TAGHomeContentViewController.m in Sources */,
 				3D12FD2719A5380D0084595C /* TAGTextCell.m in Sources */,
 				3D252B6819942545007BF34B /* TAGTwitterController.m in Sources */,
 				3D14A709199AA5CD00C3E3FF /* TAGInstagramPost.m in Sources */,

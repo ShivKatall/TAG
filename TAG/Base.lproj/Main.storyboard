@@ -7,7 +7,7 @@
         <!--Text View Controller - TAG-->
         <scene sceneID="1gt-uU-AdW">
             <objects>
-                <viewController restorationIdentifier="textViewController" id="7qn-oF-tlp" customClass="TAGTextViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7qn-oF-tlp" customClass="TAGTextViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ICT-CR-iN1"/>
                         <viewControllerLayoutGuide type="bottom" id="0kH-Ta-pTF"/>
@@ -85,20 +85,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLm-zC-Ove" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="177"/>
+            <point key="canvasLocation" x="1505" y="169"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Egz-wf-yKD">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tst-Ic-Pmc" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tst-Ic-Pmc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU5-a5-cS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605" y="-561"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="ari-nW-IBh">
             <objects>
-                <viewController id="P6O-Bj-DzW" sceneMemberID="viewController">
+                <viewController id="P6O-Bj-DzW" customClass="TAGHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dlg-aA-Yyk"/>
                         <viewControllerLayoutGuide type="bottom" id="ZTk-ui-hh9"/>
@@ -114,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="605" y="169"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Content View Controller-->
         <scene sceneID="e0W-rt-3qp">
             <objects>
-                <viewController id="DLS-mI-ttM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="videoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DLS-mI-ttM" customClass="TAGHomeContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7jt-Zv-68H"/>
                         <viewControllerLayoutGuide type="bottom" id="Q8N-AF-Mar"/>
@@ -125,12 +125,46 @@
                     <view key="view" contentMode="scaleToFill" id="6OQ-OQ-2Zg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tB-XV-C14">
+                                <rect key="frame" x="83" y="273" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4e-rJ-Z38" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="169"/>
+            <point key="canvasLocation" x="1947" y="164"/>
+        </scene>
+        <!--Home Content View Controller-->
+        <scene sceneID="kxM-EL-rPd">
+            <objects>
+                <viewController storyboardIdentifier="imageViewController" id="OR9-Ra-gA7" customClass="TAGHomeContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uNP-L6-cgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="b6C-sl-ymC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ba2-y5-2yi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ImageViewController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-0x-QvN">
+                                <rect key="frame" x="81" y="273" width="159" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cec-zc-ZqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="164"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Tsc-i8-bOc">
@@ -143,13 +177,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="uua-Eq-i5T" kind="relationship" relationship="viewControllers" id="1yx-rI-4DL"/>
                         <segue destination="RqC-Qq-b3f" kind="relationship" relationship="viewControllers" id="vJ6-Hr-ve5"/>
+                        <segue destination="uua-Eq-i5T" kind="relationship" relationship="viewControllers" id="1yx-rI-4DL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3c-E8-PsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446" y="572"/>
+            <point key="canvasLocation" x="-448" y="570"/>
         </scene>
         <!--View Controller - Item 2-->
         <scene sceneID="39M-5g-2R6">

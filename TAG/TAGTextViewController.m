@@ -13,7 +13,7 @@
 #import "TAGTextCollectionView.h"
 #import "TAGTextCell.h"
 
-@interface TAGTextViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIPageViewControllerDataSource>
+@interface TAGTextViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property (nonatomic, strong) TAGAppDelegate *appDelegate;
 @property (nonatomic, strong) TAGTwitterController *twitterController;
@@ -34,6 +34,7 @@
     _appDelegate = [UIApplication sharedApplication].delegate;
     _textCollectionView.delegate = self;
     _textCollectionView.dataSource = self;
+    self.pageIndex = 1;
     
     // setup twitter
     _twitterController = _appDelegate.twitterController;

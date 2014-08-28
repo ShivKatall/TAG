@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TAGTextViewController.h"
 
-@interface TAGHomeViewController : UIViewController
+@interface TAGHomeViewController : UIViewController <UIPageViewControllerDataSource>
+
+@property (strong, nonatomic) UIPageViewController *pageViewController;
 
 @end
