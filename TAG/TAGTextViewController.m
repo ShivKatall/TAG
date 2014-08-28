@@ -35,26 +35,23 @@
     _textCollectionView.delegate = self;
     _textCollectionView.dataSource = self;
     self.pageIndex = 1;
-    
-    // setup twitter
-    _twitterController = _appDelegate.twitterController;
-    [_twitterController fetchSearchResultsForQuery:@"KanyeWest" withCompletionBlock:^(NSMutableArray *twitterPosts) {
-        [self assignViewControllerPostsFromTwitterControllerPosts:twitterPosts];
-    }];
-    
-    [_textCollectionView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 
+    // setup twitter
+    _twitterController = _appDelegate.twitterController;
+    [_twitterController fetchSearchResultsForQuery:@"KanyeWest" withCompletionBlock:^(NSMutableArray *twitterPosts) {
+        [self assignViewControllerPostsFromTwitterControllerPosts:twitterPosts];
+    }];
+    
     // setup instagram
     _instagramController = _appDelegate.instagramController;
     
     if (_instagramController.instagramToken) {
         [_instagramController fetchInstagramPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
-            
         }];
     }
     

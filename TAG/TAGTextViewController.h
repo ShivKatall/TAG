@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 TAG. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "TAGHomeContentViewController.h"
 
 @interface TAGTextViewController : TAGHomeContentViewController
