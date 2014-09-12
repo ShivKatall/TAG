@@ -31,18 +31,19 @@
     _appDelegate = [UIApplication sharedApplication].delegate;
     _textCollectionView.delegate = self;
     _textCollectionView.dataSource = self;
+    
     self.pageIndex = 1;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-
+    
     // setup twitter
     _twitterController = _appDelegate.twitterController;
     [_twitterController fetchSearchResultsForQuery:@"KanyeWest" withCompletionBlock:^(NSMutableArray *twitterPosts) {
         [self assignViewControllerPostsFromTwitterControllerPosts:twitterPosts];
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     [_textCollectionView reloadData];
 }

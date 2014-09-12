@@ -34,11 +34,6 @@
     _photoCollectionView.dataSource = self;
     
     self.pageIndex = 0;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     
     // setup instagram
     _instagramController = _appDelegate.instagramController;
@@ -48,6 +43,11 @@
             [self assignViewControllerPostsFromInstagramControllerPosts:instagramPosts];
         }];
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     [_photoCollectionView reloadData];
 }
