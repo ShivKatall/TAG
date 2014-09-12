@@ -10,18 +10,15 @@
 #import "TAGTextViewController.h"
 #import "TAGTwitterController.h"
 #import "TAGTwitterPost.h"
-#import "TAGTextCollectionView.h"
 #import "TAGTextCell.h"
 
 @interface TAGTextViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
 @property (nonatomic, strong) TAGAppDelegate *appDelegate;
 @property (nonatomic, strong) TAGTwitterController *twitterController;
-@property (nonatomic, strong) TAGInstagramController *instagramController;
 @property (weak, nonatomic) IBOutlet UICollectionView *textCollectionView;
 
 @property (nonatomic, strong) NSArray *currentTwitterPosts;
-@property (nonatomic, strong) NSArray *currentInstagramPosts;
 
 @end
 
@@ -46,14 +43,6 @@
     [_twitterController fetchSearchResultsForQuery:@"KanyeWest" withCompletionBlock:^(NSMutableArray *twitterPosts) {
         [self assignViewControllerPostsFromTwitterControllerPosts:twitterPosts];
     }];
-    
-    // setup instagram
-    _instagramController = _appDelegate.instagramController;
-    
-    if (_instagramController.instagramToken) {
-        [_instagramController fetchInstagramPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
-        }];
-    }
     
     [_textCollectionView reloadData];
 }
@@ -82,7 +71,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TAGTextCell *textCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"textCell" forIndexPath:indexPath];
+    TAGTextCell *textCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TextCell" forIndexPath:indexPath];
     TAGTwitterPost *twitterPost = [_currentTwitterPosts objectAtIndex:indexPath.row];
     
     // text

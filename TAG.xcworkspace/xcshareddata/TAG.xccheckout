@@ -10,29 +10,29 @@
 	<string>TAG</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4FAD783A-D860-4F3A-B415-F09B89825621</key>
+		<key>F04EE4BC3F184D7A0F53E60D45BEB807C3D101B2</key>
 		<string>ssh://github.com/ShivKatall/TAG.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>TAG.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4FAD783A-D860-4F3A-B415-F09B89825621</key>
+		<key>F04EE4BC3F184D7A0F53E60D45BEB807C3D101B2</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/ShivKatall/TAG.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4FAD783A-D860-4F3A-B415-F09B89825621</string>
+	<string>F04EE4BC3F184D7A0F53E60D45BEB807C3D101B2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4FAD783A-D860-4F3A-B415-F09B89825621</string>
+			<string>F04EE4BC3F184D7A0F53E60D45BEB807C3D101B2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>TAG</string>
 		</dict>

@@ -10,4 +10,6 @@
 
 @interface TAGPhotoViewController : TAGHomeContentViewController
 
+@property NSUInteger pageIndex;
+
 @end

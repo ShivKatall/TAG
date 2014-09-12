@@ -10,4 +10,6 @@
 
 @interface TAGPhotoCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+
 @end

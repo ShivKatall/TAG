@@ -247,8 +247,8 @@
 				3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */,
 				3DDC555C19AFA7EC006DB66B /* TAGHomeContentViewController.h */,
 				3DDC555D19AFA7EC006DB66B /* TAGHomeContentViewController.m */,
-				3D4DD180199C2C9400424068 /* TextViewController */,
 				3D4DD184199C2CC300424068 /* PhotoViewController */,
+				3D4DD180199C2C9400424068 /* TextViewController */,
 				3D4DD188199C2D0100424068 /* VideoViewController */,
 			);
 			name = HomeViewController;

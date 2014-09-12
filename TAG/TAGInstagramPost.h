@@ -17,6 +17,9 @@
 
 // Post
 @property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *caption;
+
+- (void)downloadImageWithCompletionBlock:(void (^)())completion;
 
 @end

@@ -196,10 +196,22 @@
                 newInstagramPost.caption = [captionDictionary objectForKey:@"text"];
             }
             
+            // Image
+            NSDictionary *imageDictionary = [NSDictionary new];
+            NSDictionary *standardResolutionDictionary = [NSDictionary new];
+            
+            if ([obj objectForKey:@"images"] != [NSNull null]) {
+                imageDictionary = [obj objectForKey:@"images"];
+            }
+            if ([imageDictionary objectForKey:@"standard_resolution"] != [NSNull null]) {
+                standardResolutionDictionary = [imageDictionary objectForKey:@"standard_resolution"];
+            }
+            if ([standardResolutionDictionary objectForKey:@"url"] != [NSNull null]) {
+                newInstagramPost.imageURL = [standardResolutionDictionary objectForKey:@"url"];
+            }
+                    
             [instagramPosts addObject:newInstagramPost];
             
-//            NSLog(@"User: %@ \n Caption: %@ \n", newInstagramPost.userName, newInstagramPost.caption);
-        
         }];
         
         NSLog(@"Instagram Posts: %lu", (unsigned long)instagramPosts.count);
