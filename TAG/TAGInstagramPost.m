@@ -7,7 +7,6 @@
 //
 
 #import "TAGInstagramPost.h"
-#import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVAsset.h>
 

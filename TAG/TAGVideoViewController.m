@@ -12,6 +12,7 @@
 #import "TAGInstagramController.h"
 #import "TAGInstagramPost.h"
 #import "TAGVideoCell.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 
 @interface TAGVideoViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
@@ -87,5 +88,14 @@
     return videoCell;
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TAGInstagramPost *instagramPost = [_currentInstagramPosts objectAtIndex:indexPath.row];
+    
+    NSURL *videosURL = [NSURL URLWithString:instagramPost.videoURL];
+    MPMoviePlayerViewController *moviePlayViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:videosURL];
+    
+    [self.navigationController presentMoviePlayerViewControllerAnimated:moviePlayViewController];
+}
+    
 @end
