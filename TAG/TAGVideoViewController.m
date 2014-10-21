@@ -6,44 +6,86 @@
 //  Copyright (c) 2014 TAG. All rights reserved.
 //
 
-#import "TAGVideoViewController.h"
 
-@interface TAGVideoViewController ()
+#import "TAGVideoViewController.h"
+#import "TAGAppDelegate.h"
+#import "TAGInstagramController.h"
+#import "TAGInstagramPost.h"
+#import "TAGVideoCell.h"
+
+
+@interface TAGVideoViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+
+@property (nonatomic, strong) TAGAppDelegate *appDelegate;
+@property (nonatomic, strong) TAGInstagramController *instagramController;
+@property (nonatomic, weak) IBOutlet UICollectionView *videoCollectionView;
+
+@property (nonatomic, strong) NSArray *currentInstagramPosts;
 
 @end
 
 @implementation TAGVideoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _appDelegate = [UIApplication sharedApplication].delegate;
+    _videoCollectionView.delegate = self;
+    _videoCollectionView.dataSource = self;
+    
+    self.pageIndex = 0;
+    
+    // setup instagram
+    _instagramController = _appDelegate.instagramController;
+    
+    if (_instagramController.instagramToken) {
+        [_instagramController fetchPostsForTag:@"Video" withCompletionBlock:^(NSMutableArray *instagramPosts) {
+            [self assignViewControllerPostsFromInstagramControllerPosts:instagramPosts];
+        }];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)assignViewControllerPostsFromInstagramControllerPosts:(NSMutableArray *)instagramControllerPosts
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSMutableArray *videoPosts = [NSMutableArray new];
+    
+    [instagramControllerPosts enumerateObjectsUsingBlock:^(TAGInstagramPost *post, NSUInteger idx, BOOL *stop) {
+        if (post.postType == VIDEO) {
+            [videoPosts addObject:post];
+        }
+    }];
+    
+    NSArray *postArray = [NSArray arrayWithArray:videoPosts];
+    
+    _currentInstagramPosts = postArray;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_videoCollectionView reloadData];
+    });
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - CollectionViewDelegate Methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return [_currentInstagramPosts count];
 }
-*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TAGVideoCell *videoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VideoCell" forIndexPath:indexPath];
+    TAGInstagramPost *instagramPost = [_currentInstagramPosts objectAtIndex:indexPath.row];
+    
+    if (instagramPost.videoThumbnail) {
+        videoCell.thumbnail.image = instagramPost.videoThumbnail;
+    } else {
+        [instagramPost createThumbnailWithCompletionBlock:^{
+            [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+        }];
+    }
+    return videoCell;
+}
+
 
 @end

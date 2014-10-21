@@ -15,7 +15,6 @@
 @property (nonatomic, strong) NSArray *currentInstagramPosts;
 
 -(void)gainOAuthAccessWithURL:(NSURL *)url;
--(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock;
-
+-(void)fetchPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock;
 
 @end

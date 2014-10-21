@@ -10,4 +10,6 @@
 
 @interface TAGVideoCell : UICollectionViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *thumbnail;
+
 @end

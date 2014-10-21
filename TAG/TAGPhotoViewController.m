@@ -17,7 +17,7 @@
 @property (nonatomic, strong) TAGAppDelegate *appDelegate;
 @property (nonatomic, strong) TAGInstagramController *instagramController;
 
-@property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
+@property (nonatomic, weak) IBOutlet UICollectionView *photoCollectionView;
 @property (nonatomic, strong) NSArray *currentInstagramPosts;
 
 @end
@@ -39,7 +39,7 @@
     _instagramController = _appDelegate.instagramController;
     
     if (_instagramController.instagramToken) {
-        [_instagramController fetchInstagramPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
+        [_instagramController fetchPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
             [self assignViewControllerPostsFromInstagramControllerPosts:instagramPosts];
         }];
     }
@@ -60,7 +60,17 @@
 
 - (void)assignViewControllerPostsFromInstagramControllerPosts:(NSMutableArray *)instagramControllerPosts
 {
-    _currentInstagramPosts = instagramControllerPosts;
+    NSMutableArray *imagePosts = [NSMutableArray new];
+    
+    [instagramControllerPosts enumerateObjectsUsingBlock:^(TAGInstagramPost *post, NSUInteger idx, BOOL *stop) {
+        if (post.postType == IMAGE) {
+            [imagePosts addObject:post];
+        }
+    }];
+    
+    NSArray *postArray = [NSArray arrayWithArray:imagePosts];
+    
+    _currentInstagramPosts = postArray;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [_photoCollectionView reloadData];

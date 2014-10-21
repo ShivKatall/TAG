@@ -125,7 +125,7 @@
 
 #pragma mark API Methods
 
--(void)fetchInstagramPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
+-(NSMutableURLRequest *)createRequestForTag:(NSString *)tag
 {
     // set parameters
     
@@ -139,9 +139,6 @@
     NSLog(@"fetchURL: %@", _fetchURL.path);
     NSLog(@"requestURL: %@", requestURL.path);
     
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    
     // setup request
     NSMutableURLRequest *request = [NSMutableURLRequest new];
     [request setURL:requestURL];
@@ -150,6 +147,16 @@
     
     NSLog(@"Request: %@", request.HTTPBody);
     NSLog(@"Token: %@", self.instagramToken);
+    
+    return request;
+};
+
+-(void)fetchPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
+{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    NSMutableURLRequest *request = [self createRequestForTag:tag];
     
     // setup dataTask
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -195,23 +202,49 @@
             if ([captionDictionary objectForKey:@"text"] != [NSNull null]) {
                 newInstagramPost.caption = [captionDictionary objectForKey:@"text"];
             }
+
             
             // Image
-            NSDictionary *imageDictionary = [NSDictionary new];
-            NSDictionary *standardResolutionDictionary = [NSDictionary new];
-            
-            if ([obj objectForKey:@"images"] != [NSNull null]) {
-                imageDictionary = [obj objectForKey:@"images"];
+
+            if ([[obj objectForKey:@"type"] isEqualToString:@"image"]) {
+                
+                newInstagramPost.postType = IMAGE;
+                
+                NSDictionary *imageDictionary = [NSDictionary new];
+                NSDictionary *standardResolutionDictionary = [NSDictionary new];
+                
+                if ([obj objectForKey:@"images"] != [NSNull null]) {
+                    imageDictionary = [obj objectForKey:@"images"];
+                }
+                if ([imageDictionary objectForKey:@"standard_resolution"] != [NSNull null]) {
+                    standardResolutionDictionary = [imageDictionary objectForKey:@"standard_resolution"];
+                }
+                if ([standardResolutionDictionary objectForKey:@"url"] != [NSNull null]) {
+                    newInstagramPost.imageURL = [standardResolutionDictionary objectForKey:@"url"];
+                }
+                
+            // Video
+                
+            } else if ([[obj objectForKey:@"type"] isEqualToString:@"video"]) {
+                
+                newInstagramPost.postType = VIDEO;
+                
+               
+                NSDictionary *videoDictionary = [NSDictionary new];
+                NSDictionary *standardResolutionDictionary = [NSDictionary new];
+                
+                if ([obj objectForKey:@"videos"] != [NSNull null]) {
+                    videoDictionary = [obj objectForKey:@"videos"];
+                }
+                if ([videoDictionary objectForKey:@"standard_resolution"] != [NSNull null]) {
+                    standardResolutionDictionary = [videoDictionary objectForKey:@"standard_resolution"];
+                }
+                if ([standardResolutionDictionary objectForKey:@"url"] != [NSNull null]) {
+                    newInstagramPost.videoURL = [standardResolutionDictionary objectForKey:@"url"];
+                }
             }
-            if ([imageDictionary objectForKey:@"standard_resolution"] != [NSNull null]) {
-                standardResolutionDictionary = [imageDictionary objectForKey:@"standard_resolution"];
-            }
-            if ([standardResolutionDictionary objectForKey:@"url"] != [NSNull null]) {
-                newInstagramPost.imageURL = [standardResolutionDictionary objectForKey:@"url"];
-            }
-                    
+                
             [instagramPosts addObject:newInstagramPost];
-            
         }];
         
         NSLog(@"Instagram Posts: %lu", (unsigned long)instagramPosts.count);
