@@ -151,12 +151,12 @@
     return request;
 };
 
--(void)fetchPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
+-(void)fetchPostsForTag:(TAGTag *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock
 {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSMutableURLRequest *request = [self createRequestForTag:tag];
+    NSMutableURLRequest *request = [self createRequestForTag:tag.name];
     
     // setup dataTask
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

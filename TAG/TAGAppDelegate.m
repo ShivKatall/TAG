@@ -7,6 +7,10 @@
 //
 
 #import "TAGAppDelegate.h"
+#import "TAGDataController.h"
+
+// temporary imports
+#import "TAGTag.h"
 
 @implementation TAGAppDelegate
 
@@ -17,6 +21,9 @@
     
     self.twitterController = [TAGTwitterController new];
     self.instagramController = [TAGInstagramController new];
+    
+    CURRENT_TAG = [TAGTag new];
+    CURRENT_TAG.name = @"KanyeWest";
     
     return YES;
 }

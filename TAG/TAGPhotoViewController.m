@@ -11,6 +11,7 @@
 #import "TAGInstagramController.h"
 #import "TAGPhotoCell.h"
 #import "TAGInstagramPost.h"
+#import "TAGDataController.h"
 
 @interface TAGPhotoViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
@@ -39,7 +40,7 @@
     _instagramController = _appDelegate.instagramController;
     
     if (_instagramController.instagramToken) {
-        [_instagramController fetchPostsForTag:@"KanyeWest" withCompletionBlock:^(NSMutableArray *instagramPosts) {
+        [_instagramController fetchPostsForTag:CURRENT_TAG withCompletionBlock:^(NSMutableArray *instagramPosts) {
             [self assignViewControllerPostsFromInstagramControllerPosts:instagramPosts];
         }];
     }

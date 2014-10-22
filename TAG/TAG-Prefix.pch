@@ -14,4 +14,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "UIColor+TAGColors.h"
+
+#define CURRENT_TAG [TAGDataController sharedController].currentTag
+
 #endif

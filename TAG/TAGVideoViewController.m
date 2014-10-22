@@ -9,6 +9,7 @@
 
 #import "TAGVideoViewController.h"
 #import "TAGAppDelegate.h"
+#import "TAGDataController.h"
 #import "TAGInstagramController.h"
 #import "TAGInstagramPost.h"
 #import "TAGVideoCell.h"
@@ -41,7 +42,7 @@
     _instagramController = _appDelegate.instagramController;
     
     if (_instagramController.instagramToken) {
-        [_instagramController fetchPostsForTag:@"Video" withCompletionBlock:^(NSMutableArray *instagramPosts) {
+        [_instagramController fetchPostsForTag:CURRENT_TAG withCompletionBlock:^(NSMutableArray *instagramPosts) {
             [self assignViewControllerPostsFromInstagramControllerPosts:instagramPosts];
         }];
     }

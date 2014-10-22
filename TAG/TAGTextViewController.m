@@ -11,6 +11,7 @@
 #import "TAGTwitterController.h"
 #import "TAGTwitterPost.h"
 #import "TAGTextCell.h"
+#import "TAGDataController.h"
 
 @interface TAGTextViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
@@ -36,7 +37,7 @@
     
     // setup twitter
     _twitterController = _appDelegate.twitterController;
-    [_twitterController fetchSearchResultsForQuery:@"KanyeWest" withCompletionBlock:^(NSMutableArray *twitterPosts) {
+    [_twitterController fetchSearchResultsForTag:CURRENT_TAG withCompletionBlock:^(NSMutableArray *twitterPosts) {
         [self assignViewControllerPostsFromTwitterControllerPosts:twitterPosts];
     }];
 }

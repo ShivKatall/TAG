@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TAGTag.h"
 
 @interface TAGTwitterController : NSObject
 
 @property (nonatomic, strong) NSString *token;
 
--(void)fetchSearchResultsForQuery:(NSString *)query withCompletionBlock:(void(^)(NSMutableArray *twitterPosts))completionBlock;
+-(void)fetchSearchResultsForTag:(TAGTag *)tag withCompletionBlock:(void(^)(NSMutableArray *twitterPosts))completionBlock;
 
 @end

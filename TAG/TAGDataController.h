@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TAGTag.h"
 
 @interface TAGDataController : NSObject
+
+@property (nonatomic, strong)NSMutableArray *tags;
+@property (nonatomic, strong)TAGTag *currentTag;
+
++(TAGDataController *)sharedController;
 
 @end

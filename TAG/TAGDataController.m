@@ -10,4 +10,15 @@
 
 @implementation TAGDataController
 
++(TAGDataController *)sharedController
+{
+    static dispatch_once_t pred;
+    static TAGDataController *shared = nil;
+    
+    dispatch_once(&pred, ^{
+        shared = [[TAGDataController alloc] init];
+    });
+    return shared;
+}
+
 @end

@@ -35,10 +35,10 @@
     return [SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter];
 }
 
--(void)fetchSearchResultsForQuery:(NSString *)query withCompletionBlock:(void(^)(NSMutableArray *twitterPosts))completionBlock
+-(void)fetchSearchResultsForTag:(TAGTag *)tag withCompletionBlock:(void(^)(NSMutableArray *twitterPosts))completionBlock
 {
     NSMutableArray *twitterPosts = [NSMutableArray new];
-    NSString *hashtagQuery = [self createHashtagQueryFromQuery:query];
+    NSString *hashtagQuery = [self createHashtagQueryFromQuery:tag.name];
     
     if ([self userHasAccessToTwitter]) {
         {

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TAGTag.h"
 
 @interface TAGInstagramController : NSObject
 
@@ -15,6 +16,6 @@
 @property (nonatomic, strong) NSArray *currentInstagramPosts;
 
 -(void)gainOAuthAccessWithURL:(NSURL *)url;
--(void)fetchPostsForTag:(NSString *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock;
+-(void)fetchPostsForTag:(TAGTag *)tag withCompletionBlock:(void(^)(NSMutableArray *instagramPosts))completionBlock;
 
 @end
