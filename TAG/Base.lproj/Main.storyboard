@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="f1f-T5-YvK">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -82,13 +83,39 @@
             </objects>
             <point key="canvasLocation" x="1505" y="169"/>
         </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="P4G-bS-lgf">
+            <objects>
+                <viewController id="yzc-AE-iYG" customClass="TAGMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fLy-nm-NAo"/>
+                        <viewControllerLayoutGuide type="bottom" id="JQw-Lm-6VL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2AC-gK-dTZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HI!!!!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udr-hL-ZBN">
+                                <rect key="frame" x="139" y="273" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.010051519906342232" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pby-wk-PAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="-562"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="Egz-wf-yKD">
             <objects>
                 <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tst-Ic-Pmc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU5-a5-cS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="-561"/>
+            <point key="canvasLocation" x="1052" y="-562"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ari-nW-IBh">
@@ -103,7 +130,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="upk-rn-A4v"/>
+                    <navigationItem key="navigationItem" id="upk-rn-A4v">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="E64-Sp-8KC">
+                            <connections>
+                                <action selector="toggleMenu:" destination="P6O-Bj-DzW" id="u1j-nw-mza"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU9-If-gsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

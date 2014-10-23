@@ -37,6 +37,7 @@
 		3D7CDEB019AD34FB000FA056 /* UIColor+TAGColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */; };
 		3D87754E1994498B000F62A0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D87754D1994498B000F62A0 /* Social.framework */; };
 		3DAC3B0B19F58F1D00A197AA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAC3B0A19F58F1D00A197AA /* MediaPlayer.framework */; };
+		3DD20F4819F9AB5100B94E60 /* TAGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD20F4719F9AB5100B94E60 /* TAGMenuViewController.m */; };
 		3DD9390B19AE7D0400FA9C0F /* TAGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */; };
 		3DDC555E19AFA7EC006DB66B /* TAGHomeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDC555D19AFA7EC006DB66B /* TAGHomeContentViewController.m */; };
 		A852E8BEC8AA40F29F2A44BF /* libPods-TAG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A74B2BE8732B4063A840C252 /* libPods-TAG.a */; };
@@ -102,6 +103,8 @@
 		3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TAGColors.m"; sourceTree = "<group>"; };
 		3D87754D1994498B000F62A0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3DAC3B0A19F58F1D00A197AA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		3DD20F4619F9AB5100B94E60 /* TAGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGMenuViewController.h; sourceTree = "<group>"; };
+		3DD20F4719F9AB5100B94E60 /* TAGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGMenuViewController.m; sourceTree = "<group>"; };
 		3DD9390919AE7D0400FA9C0F /* TAGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGHomeViewController.h; sourceTree = "<group>"; };
 		3DD9390A19AE7D0400FA9C0F /* TAGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGHomeViewController.m; sourceTree = "<group>"; };
 		3DDC555C19AFA7EC006DB66B /* TAGHomeContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGHomeContentViewController.h; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 				3D7CDEAE19AD34FB000FA056 /* UIColor+TAGColors.h */,
 				3D7CDEAF19AD34FB000FA056 /* UIColor+TAGColors.m */,
 				3D4DD172199C2B9B00424068 /* HomeViewController */,
+				3DD20F4919F9AB5500B94E60 /* MenuViewController */,
 				3D4DD17C199C2C6E00424068 /* DiscoverViewController */,
 				3D252B44199424A9007BF34B /* Images.xcassets */,
 			);
@@ -308,6 +312,15 @@
 				3D33233619AFEA7A0074EBAC /* TAGVideoCell.m */,
 			);
 			name = VideoViewController;
+			sourceTree = "<group>";
+		};
+		3DD20F4919F9AB5500B94E60 /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DD20F4619F9AB5100B94E60 /* TAGMenuViewController.h */,
+				3DD20F4719F9AB5100B94E60 /* TAGMenuViewController.m */,
+			);
+			name = MenuViewController;
 			sourceTree = "<group>";
 		};
 		F8DB2B3389D4FF62B14BF08F /* Pods */ = {
@@ -456,6 +469,7 @@
 				3D252B43199424A9007BF34B /* TAGTextViewController.m in Sources */,
 				3DD9390B19AE7D0400FA9C0F /* TAGHomeViewController.m in Sources */,
 				3D252B70199425B4007BF34B /* TAGDataController.m in Sources */,
+				3DD20F4819F9AB5100B94E60 /* TAGMenuViewController.m in Sources */,
 				3D252B39199424A9007BF34B /* main.m in Sources */,
 				3D33233419AFEA190074EBAC /* TAGVideoViewController.m in Sources */,
 				3D252B6D1994257A007BF34B /* TAGInstagramController.m in Sources */,

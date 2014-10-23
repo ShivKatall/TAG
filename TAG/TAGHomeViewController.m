@@ -7,8 +7,13 @@
 //
 
 #import "TAGHomeViewController.h"
+#import "TAGMenuViewController.h"
 
 @interface TAGHomeViewController ()
+
+@property (nonatomic) BOOL menuShown;
+
+@property (nonatomic, strong) TAGMenuViewController *menuViewController;
 
 @end
 
@@ -20,6 +25,7 @@
     
     _pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"pageViewController"];
     _pageViewController.dataSource = self;
+    _menuViewController = [TAGMenuViewController new];
     
     TAGHomeContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
@@ -32,6 +38,8 @@
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [_pageViewController didMoveToParentViewController:self];
+    
+    _menuShown = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +69,43 @@
     }
     
     return contentViewController;
+}
+
+
+
+- (IBAction)toggleMenu:(id)sender
+{
+    if (_menuShown == YES) {
+        
+        [[_menuViewController view] removeFromSuperview];
+        
+        _menuViewController = nil;
+        
+        _menuShown = NO;
+        
+    } else {
+        [[self view] addSubview: [_menuViewController view]];
+        
+        CGRect frame = [[self view] frame];
+    
+        frame.origin.y = [[self view] frame].size.height;
+        [[_menuViewController view] setFrame: frame];
+        frame.origin.y = 0.0 - [[self view] frame].size.height;
+        
+        
+        [UIView animateWithDuration: 1.0
+                              delay: 0.0
+                            options: UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             [[self view] setFrame: frame];
+                         }
+                         completion: ^(BOOL finished) {
+                             
+                         }
+         ];
+        
+        _menuShown = YES;
+    }
 }
 
 #pragma mark - PageViewController DataSource
